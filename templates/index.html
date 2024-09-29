@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Image Compressor</h1>
+<form method="post" action="/upload" enctype="multipart/form-data">
+    
+    <!-- Centered Choose File Button -->
+    <input type="file" name="files" multiple required>
+    
+    
+    <!-- Custom Target Size in the Center -->
+    <label for="target_size">Custom Target Size (in KB):</label>
+    <input type="number" name="target_size" id="target_size" min="20" placeholder="Enter your value in KB">
+
+    <!-- Optimize checkbox aligned to the right with a tooltip -->
+    <div class="checkbox-group">
+        <label for="optimize">Optimize</label>
+        <input type="checkbox" name="optimize" id="optimize" onclick="toggleCustomSize()">
+        <div class="tooltip">?
+            <span class="tooltiptext">Optimizing reduces file size while maintaining quality, suitable for web use.</span>
+        </div>
+    </div>
+
+    <input type="submit" value="Compress Images">
+</form>
+
+<script>
+    function toggleCustomSize() {
+        const targetSizeInput = document.getElementById('target_size');
+        if (document.getElementById('optimize').checked) {
+            targetSizeInput.classList.add('disabled');
+            targetSizeInput.disabled = true;
+        } else {
+            targetSizeInput.classList.remove('disabled');
+            targetSizeInput.disabled = false;
+        }
+    }
+</script>
+</body>
+</html>

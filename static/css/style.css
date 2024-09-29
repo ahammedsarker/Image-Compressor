@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Responsive Form */
+form {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Centered "Choose File" Button */
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+}
+
+label[for="optimize"] {
+    text-align: center;
+}
+
+/* "No file chosen" message below file input */
+.no-file-message {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Tooltip for "Optimize" */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Custom Target Size Text in Center */
+label[for="target_size"] {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Optimize Checkbox Alignment */
+.checkbox-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Input and Submit Button Styling */
+input[type="number"], input[type="submit"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+    input[type="file"], input[type="number"], input[type="submit"] {
+        font-size: 16px;
+    }
+}
